@@ -30,8 +30,7 @@ def ipcatcher():
     # Attempt to grab IP
     ip = request.remote_addr
     log(ip)
-    # Return cheerful message
-    return f"Thanks for your Internet protocol address!"
+    return f"Your IP is {ip}"
 
 # Execute App
 if __name__ == "__main__":
