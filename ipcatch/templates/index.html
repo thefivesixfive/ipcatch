@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <!-- Header Crap -->
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}"
+        <!-- Tab Appearance -->
+        <title>IP Snatch</title>
+    </head>
+    <!-- Body -->
+    <body>
+        <!-- Thank them for IP -->
+        <div id=thanks_wrap>
+            <p id=thanks>Hey there, <span id=ip>{{ client_ip }}</span><br>Thanks for your IP!</p>
+        </div>
+        <!-- Bottom Stuff -->
+        <div id=bottom_text>
+            <p id=credit>Made by <a target="_blank" rel="noopener noreferrer nofollow" href="https://fivesixfive.dev">fivesixfive</a></p>
+            <a id=copyright>&copy; <span id=year>2021</span> Caleb North</a>
+        </div>
+    </body>
+</html>

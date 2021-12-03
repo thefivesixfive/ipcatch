@@ -1,0 +1,74 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+/* Clear */
+* {margin:0;padding:0}
+/* Body */
+body {
+    overflow: hidden;
+    /* Coloring */
+    background: rgb(255,255,255);
+    /* Font */
+    font-family: "Prompt", sans-serif;
+    /* Animation */
+    animation: rotate-colors 30s infinite;
+}
+@keyframes rotate-colors {
+    0% {background: #fea3aa;}
+    16% {background: #f8b88b;}
+    32% {background: #faf884;}
+    48% {background: #baed91; }
+    64% {background: #b2cefe; }
+    80% {background: #f2a2e8; }
+    100% {background: #fea3aa; }
+}
+/* Thanks */
+#thanks_wrap {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    /* Positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#thanks {
+    /* Font Settings */
+    font-size: 1.25em;
+    text-align: center;
+}
+#ip {
+    /* Font Settings */
+    font-family: monospace;
+    font-size: 1.25em;
+}
+/* Bottom Text */
+#bottom_text {
+    /* Positioning */
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    /* Spacing */
+    margin: 1%;
+    padding: 0.5%;
+    /* Font Settings */
+    font-size: 0.65em;
+    color: #444f;
+    /* Decor */
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444f;
+    transition: color 0.5s, border-color 0.5s;
+}
+#bottom_text:hover, #bottom_text:hover #credit a {
+    /* Coloring */
+    color: #000f;
+    border-color: #000f;
+    text-decoration-color: #000f;
+}
+#credit a {
+    /* Font Deco */
+    transition: color 0.5s, text-decoration-color 0.5s;
+    text-decoration-style: solid;
+    text-decoration-color: #444f;
+    color: #444f;
+}

@@ -5,33 +5,21 @@
 # 0.0.0
 
 # Imports
-from flask import Flask, request
-from os.path import exists, join
+from flask import Flask, request, render_template
+from os import getcwd
 from sys import path
 
 # Main Flask App object
 ipcatch = Flask(__name__)
 
-# Logging Application
-def log(ip):
-    # Create log filepath
-    ip_log = join(path[0], "ips.log")
-    # Check if log file exists
-    if not exists(ip_log):
-        open("ips.log", "w").close()
-    # Write to log
-    with open(ip_log, "a") as file:
-        # Write IP to file with newline
-        msg = f"{ip}\n"
-        file.write(msg)
 # Homepage, grabs IP
 @ipcatch.route("/")
 def ipcatcher():
     # Attempt to grab IP
-    ip = request.remote_addr
-    log(ip)
-    return f"Your IP is {ip}"
-
-# Execute App
-if __name__ == "__main__":
-    ipcatch.run()
+    try:
+        ip = request.environ["HTTP_X_FORWARDED_FOR"]
+        print("Reverse proxy IP")
+    except:
+        ip = request.remote_addr
+        print("Direct IP")
+    return render_template("index.html", client_ip=ip)#, client_ip="123.456.789.012")
